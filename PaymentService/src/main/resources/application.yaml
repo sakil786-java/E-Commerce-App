@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/paymentdb_dailycodebuffer
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  application:
+    name: PAYMENT-SERVICE
+  config:
+    import: configserver:http://localhost:9296
